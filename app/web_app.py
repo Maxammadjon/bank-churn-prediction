@@ -1,4 +1,5 @@
 import joblib
+import os
 import pandas as pd
 from pathlib import Path
 from flask import Flask, request, render_template
@@ -81,4 +82,8 @@ def func_predict():
     )
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(
+        host="0.0.0.0",
+        port=int(os.environ.get("PORT", 10000)),
+        debug=True
+    )
