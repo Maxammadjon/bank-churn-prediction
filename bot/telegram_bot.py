@@ -121,7 +121,7 @@ async def cmd_start(message: Message):
 @router.message(F.text == '🚀 Начать прогноз')
 async def start_form(message: Message, state: FSMContext):
     await state.set_state(ClientForm.credit_score)
-    await message.answer('Введите кредитный рейтинг клиента:', reply_markup=ReplyKeyboardRemove())
+    await message.answer('Введите кредитный рейтинг клиента от 350 до 850:', reply_markup=ReplyKeyboardRemove())
 
 # ---------------- CREDIT SCORE ----------------
 

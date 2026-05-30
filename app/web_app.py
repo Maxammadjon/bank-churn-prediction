@@ -81,9 +81,15 @@ def func_predict():
         probability=round(probability, 2)
     )
 
+import os
+
 if __name__ == '__main__':
-    app.run(
-        host='0.0.0.0',
-        port=int(os.environ.get('PORT', 10000)),
-        debug=False
-    )
+
+    if os.environ.get("RENDER"):
+        app.run(
+            host='0.0.0.0',
+            port=int(os.environ.get('PORT', 10000)),
+            debug=False
+        )
+    else:
+        app.run(debug=True)

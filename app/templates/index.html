@@ -4,32 +4,193 @@
 <head>
     <meta charset="UTF-8">
 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Прогноз оттока клиентов банка</title>
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
           rel="stylesheet">
 </head>
-<style>
+    <style>
 
 body{
     background-image: url("https://images.unsplash.com/photo-1554224155-6726b3ff858f");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+
+    min-height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    margin: 0;
+    padding: 25px;
+
+    font-family: 'Segoe UI', sans-serif;
+}
+
+.container-box{
+    width: 100%;
+    max-width: 430px;
 }
 
 .card{
-    background: rgba(255,255,255,0.92);
-    border-radius: 20px;
+    background: white;
+
+    border-radius: 22px;
+
+    border: none;
+
+    box-shadow: 0 8px 30px rgba(0,0,0,0.18);
+}
+
+.card-body{
+    padding: 22px;
+}
+
+h2{
+    text-align: center;
+
+    font-size: 24px;
+
+    font-weight: 700;
+
+    color: #111;
+
+    margin-bottom: 18px;
+}
+
+.form-label{
+    font-size: 13px;
+
+    font-weight: 600;
+
+    color: #222;
+
+    margin-bottom: 5px;
+}
+
+.form-control,
+.form-select{
+
+    height: 42px;
+
+    border-radius: 10px;
+
+    border: 1px solid rgba(0,0,0,0.12);
+
+    font-size: 14px;
+
+    padding: 6px 12px;
+
+    background: white;
+
+    transition: 0.2s;
+}
+
+.form-control:focus,
+.form-select:focus{
+
+    border-color: #198754;
+
+    box-shadow:
+        0 0 0 0.15rem rgba(25,135,84,0.15);
+}
+
+.btn-success{
+
+    height: 44px;
+
+    border-radius: 10px;
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+    transition: 0.2s;
+}
+
+.btn-success:hover{
+    transform: translateY(-1px);
+}
+
+.mb-3{
+    margin-bottom: 10px !important;
+}
+
+.mb-4{
+    margin-bottom: 14px !important;
+}
+
+@media (max-width: 300px){
+
+    body{
+        padding: 10px;
+    }
+
+    .container-box{
+        max-width: 100%;
+    }
+
+    .card-body{
+        padding: 18px;
+    }
+
+    h2{
+        font-size: 22px;
+    }
+}
+
+html{
+    zoom: 78%;
+}
+
+.container-box{
+    max-width: 390px !important;
+}
+
+.card-body{
+    padding: 18px !important;
+}
+
+h2{
+    font-size: 24px !important;
+    margin-bottom: 16px !important;
+}
+
+.form-control,
+.form-select{
+    height: 36px !important;
+    font-size: 13px !important;
+    padding: 5px 10px !important;
+}
+
+.form-label{
+    font-size: 13px !important;
+    margin-bottom: 4px !important;
+}
+
+.mb-3{
+    margin-bottom: 9px !important;
+}
+
+.mb-4{
+    margin-bottom: 12px !important;
+}
+
+.btn-success{
+    height: 38px !important;
+    font-size: 13px !important;
 }
 
 </style>
+</style>
 
-<body class="bg-light">
-
-<div class="d-flex justify-content-center align-items-center vh-100">
-
-    <div class="card shadow p-4" style="width: 30rem;">
+<body>
+<div class="container-box">
+    <div class="card p-2 shadow">
 
         <div class="card-body">
 
@@ -40,7 +201,7 @@ body{
             <form action="/predict" method="POST">
 
                 <label class="form-label">
-                    Кредитный рейтинг клиента
+                    Кредитный рейтинг клиента от 350 до 850
                 </label>
 
                 <input type="number"

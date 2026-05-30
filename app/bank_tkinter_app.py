@@ -249,7 +249,7 @@ def add_label(text):
     label.pack(pady=(8, 0))
 
 
-add_label('Кредитный рейтинг клиента')
+add_label('Кредитный рейтинг клиента от 350 до 850')
 entry_credit_score = tk.Entry(
     root,
     font=custom_font_entry,
